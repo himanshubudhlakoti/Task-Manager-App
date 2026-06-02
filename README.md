@@ -27,12 +27,7 @@ Clone the project Using 'git clone <repo url>'
 1: Go to project root folder (Inside Task-Manager-App)
 2: cd Backend-Service
 3: Run command 'npm i --legacy-peer-deps'  (install dependencies)
+4: Go to email and download the environments zip folder -- unzip it and paste it at the root of the Backend-Service app -- 
 4: Run command 'npm run start:dev'
 5: Now backend service is listening port 9090 and ready to go
 # ==================================================================
-
-
-# ======================.ENV FILES=================================================
-NOTE:
-I have pushed the .env files to github (NOT RECOMMENDED) as it resides at project root folder
-# ====================================================================================
