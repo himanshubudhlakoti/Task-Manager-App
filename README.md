@@ -35,7 +35,4 @@ Clone the project Using 'git clone <repo url>'
 # ======================.ENV FILES=================================================
 NOTE:
 I have pushed the .env files to github (NOT RECOMMENDED) as it resides at project root folder
-
-its not recommanded but in this case my .env file does not contain any production credentials.
-Therefore i pushed to make the project configuration easy on the reviewer system
 # ====================================================================================
