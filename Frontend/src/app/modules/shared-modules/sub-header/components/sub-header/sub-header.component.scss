@@ -1,0 +1,77 @@
+@import "../../../../../../assets/sass/variable.scss";
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .breadcrumb {
+    background: none;
+    margin-bottom: 0;
+    padding: 0.15rem 0;
+  
+    .breadcrumb-item {
+      position: relative;
+      a {
+        color: #00728b;
+        font-size: 13px;
+        font-family: $Montserrat-Regular;
+        padding: 0 3px;
+      }
+      &::before {
+        font-family: $Montserrat-Regular;
+        left: 0;
+        padding: 0;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .breadcrumb-item + .breadcrumb-item {
+      padding-left: 2px;
+    }
+
+    .breadcrumb-item.active::before {
+      content: "";
+      padding: 0;
+    }
+  
+    .breadcrumb-item.active {
+      font-size: 13px;
+      padding: 5px 0 0 5px;
+      font-family: $Montserrat-Regular;
+    }
+  }
+  p-dropdown {
+    width: 20%;
+    ::ng-deep .p-dropdown {
+      width: 100%;
+      .p-dropdown-panel {
+        left: 0;
+        width: 175px;
+      }
+    }
+    ::ng-deep .p-dropdown:not(.p-disabled).p-focus {
+      box-shadow: none;
+    }
+  }
+  ::ng-deep .p-inputtext {
+    font-size: 14px;
+    padding: 0.25rem 0.75rem;
+  }
+}
+
+@media (max-width: 575px) {
+  nav {
+    align-items: flex-start;
+    flex-direction: column;
+    .breadcrumb {
+      margin-bottom: 5px;
+    }
+    p-dropdown {
+      width: 100%;
+    }
+    ::ng-deep .p-inputtext {
+      padding: 0.35rem 0.75rem;
+    }
+  }
+}

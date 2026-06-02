@@ -1,0 +1,120 @@
+<div class="container-fluid">
+    <p-toast position="bottom-center"></p-toast>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#1b74d5" type="ball-circus" [fullScreen]="false">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Employees ({{count}})</h5>
+                    <div class="align-items-center d-flex" *ngIf="selectedEmployeeIds.length > 0">
+                        <button class="btn" (click)="showAssignModal = true">
+                            <i class="fa fa-plus mr-2"></i>
+                            Assign
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body" *ngIf="usersData.length > 0">
+                    <div class="table-responsive">
+                        <p-table class="table table-bordered table-striped table-hover" [value]="usersData">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th class="text-center" style="width: 40px;"> # </th>
+
+                                    <th style="width: 150px;">Assign
+
+                                    </th>
+
+                                    <th style="width: 150px;">Name
+
+                                    </th>
+
+                                    <th style="width: 150px;">Team Lead
+
+                                    </th>
+                                    <th style="width: 210px">Email
+                                    </th>
+                                    <th style="width: 130px">Phone Number</th>
+
+                                    <th style="width: 175px">Added At
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-user let-i="rowIndex">
+                                <tr>
+                                    <td class="text-center"> {{((filters.pageNumber - 1) * filters.limit) + (i + 1)}}
+                                    </td>
+                                    <td>
+                                        <p-checkbox [(ngModel)]="user.selected" [binary]="true" inputId="binary"
+                                            (onChange)="onEmployeeSelection($event, user._id)">
+                                        </p-checkbox>
+                                    </td>
+                                    <td>{{user.fName | titlecase}} {{user.lName | titlecase}}</td>
+                                    <td *ngIf="user.teamLead">{{user.teamLead.fName | titlecase}} {{user.teamLead.lName
+                                        | titlecase}}</td>
+                                    <td *ngIf="!user.teamLead">Not Assigned Yet</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.phoneNo}}</td>
+                                    <td>{{user.addedAt | date:'MMM d, y, h:mm a'}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                    <p-paginator [rows]="filters.limit" [totalRecords]="count"
+                        [rowsPerPageOptions]="paginationSettings.ROW_PER_PAGE_OPTIONS" (onPageChange)="setPage($event)">
+                    </p-paginator>
+                </div>
+                <div class="card-body" *ngIf="usersData.length === 0">
+                    <h3 class="norecord">No record found(s)</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-dialog header="" [(visible)]="showAssignModal" transitionOptions="500ms cubic-bezier(0, 0, 0.2, 1)" [modal]="true"
+    [style]="{ width: '50vw' }" [baseZIndex]="9999" [draggable]="true" [resizable]="false" [closable]="false">
+    <ng-template pTemplate="header">
+        <div class="assign-modal-header">
+            <i class="pi pi-users"></i>
+            <span>Assign Team Lead</span>
+        </div>
+    </ng-template>  
+    <form id="contact">
+        <div class="gray-bg">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group mb-4">
+                        <h6>Select A Team Lead*</h6>
+                        <p-dropdown  optionLabel="label"
+    optionValue="value" #teamLeadCtrl="ngModel" class="assign-modal-dropdown" placeholder="Select Team Lead"
+                            [(ngModel)]="selectedTeamLead" name="selectedTeamLead" [options]="teamLeadList"
+                            [showClear]="true" appendTo="body" [filter]="true"  [ngClass]="{
+        'ng-invalid ng-dirty':
+        (teamLeadCtrl.touched || showErrors) && !selectedTeamLead
+    }">
+                        </p-dropdown>
+
+                        <span class="error" *ngIf="(teamLeadCtrl.touched || showErrors) && !selectedTeamLead">
+                            Selecting a Team Lead is required.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+    <p-footer>
+        <p class="submit-para">
+            <p-button label="Assign" (onClick)="assignTeamLead()" class="submit" icon="pi pi-check"
+                iconPos="right"></p-button>
+
+            <button pButton pRipple type="button" label="Close" (click)="showAssignModal=false" class="p-button-danger"
+                icon="pi pi-times" iconPos="right"></button>
+        </p>
+    </p-footer>
+
+</p-dialog>

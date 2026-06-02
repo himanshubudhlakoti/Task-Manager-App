@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a [routerLink]="routesList.DASHBOARD.path"><span class="mr-2">
+                        <i class="fa fa-dashboard"></i></span>Dashboard
+                </a>
+            </li>
+
+            <li *ngFor="let obj of breadcrumbList ; let i = index" class="breadcrumb-item dynamic">
+                <a *ngIf="i < breadcrumbList.length - 1" [routerLink]="obj.url">{{obj.label}}</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{breadcrumbList[breadcrumbList.length-1].label}}
+            </li>
+        </ol>
+    </nav>
+</div>

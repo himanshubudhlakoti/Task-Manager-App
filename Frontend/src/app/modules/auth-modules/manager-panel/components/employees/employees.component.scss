@@ -1,0 +1,396 @@
+@import "../../../../../../assets/sass/variable.scss";
+@import "../../../../../../assets/sass/buttons.scss";
+
+.card {
+    margin: 10px 0 30px;
+
+    .card-header {
+        align-items: center;
+        background-color: $card-header-bg;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.45rem 1.25rem;
+
+        h5 {
+            font-family: $title-font-family;
+            margin: 0;
+        }
+
+        button {
+            background: $theme-color;
+            color: $white-color;
+            font-size: $font-size-body;
+            font-weight: $font-weight-bold;
+            padding: 1px 20px;
+            text-transform: uppercase;
+        }
+
+        input {
+            border: 1px solid $light-gray-border;
+            border-radius: 5px;
+            font-size: 0.875rem;
+            margin-right: 10px;
+            padding: 0.1rem 0.75rem;
+        }
+    }
+
+    .card-body {
+        background-color: $card-body-bg;
+        padding: 0.6rem;
+
+        // data-table css
+        .table-responsive {
+            &::-webkit-scrollbar {
+                height: 6px;
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: lighten($theme-color, 10%);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgb(175, 175, 175);
+                box-shadow: 0px 3px 6px #00000029;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgba(95, 94, 94, 0.808);
+                cursor: pointer;
+            }
+        }
+
+        ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+            border: 1px solid #c8ced3;
+            border-width: 1px 1px 2px 1px;
+            font-size: 0.875rem;
+            font-weight: $font-weight-extra-bold;
+            padding: 0.3rem;
+        }
+
+        ::ng-deep .p-datatable .p-sortable-column .p-sortable-column-icon.pi {
+            font-size: 0.75rem;
+        }
+
+        ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+            border: 1px solid #c8ced3;
+            font-size: 0.875rem;
+            padding: 0.3rem;
+            vertical-align: middle;
+
+            .badge {
+                padding: 0.25em 0.4em 0.35rem;
+            }
+
+            .edit-icon {
+                font-size: 24px;
+                color: $theme-color;
+                cursor: pointer;
+                font-size: 20px;
+                transition: all 0.5s ease-in-out;
+
+                &:hover {
+                    color: darken($theme-color, 20%);
+                }
+            }
+        }
+
+        ::ng-deep .p-datatable .p-sortable-column:focus {
+            box-shadow: none;
+        }
+
+        ::ng-deep .p-datatable .p-sortable-column.p-highlight {
+            color: $theme-color;
+
+            &:hover {
+                color: darken($theme-color, 10%);
+            }
+        }
+
+        ::ng-deep .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+            color: $theme-color;
+        }
+
+        ::ng-deep .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f2f2f2;
+        }
+
+        ::ng-deep .table-striped tbody tr:hover {
+            color: darken($theme-color, 5%);
+            // transform: scale(1.01);
+        }
+
+        // ::ng-deep .p-button.p-button-help {
+        //     background: #2cabe3;
+        //     border: 1px solid #2cabe3;
+        //     height: 1.5rem;
+        //     width: 1.5rem;
+        //     &.btn-link {
+        //         background: #c8ced3;
+        //         border: 1px solid #c8ced3;
+        //     }
+        //     .pi {
+        //         font-size: 0.6rem;
+        //     }
+        // }
+        ::ng-deep .p-paginator {
+            border-radius: 0;
+            justify-content: flex-end;
+
+            .p-paginator-pages {
+                .p-paginator-page {
+                    border: 1px solid lighten($theme-color, 4%);
+                    color: lighten($theme-color, 10%);
+
+                    &.p-highlight {
+                        background: lighten($theme-color, 10%);
+                        color: $white-color;
+                    }
+                }
+            }
+
+            .p-paginator-first,
+            .p-paginator-prev,
+            .p-paginator-next,
+            .p-paginator-last {
+                border: 1px solid lighten($theme-color, 4%);
+                color: lighten($theme-color, 10%);
+            }
+
+            .p-dropdown {
+                border: 1px solid lighten($theme-color, 4%);
+            }
+
+            .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+                background: lighten($theme-color, 10%);
+            }
+
+            .p-dropdown:not(.p-disabled).p-focus {
+                box-shadow: none;
+            }
+        }
+
+        .norecord {
+            width: 100%;
+            text-align: center;
+            margin: 30px 0;
+            color: $theme-color;
+            opacity: 0.5;
+            font-size: 24px;
+        }
+    }
+}
+
+::ng-deep .p-dialog .p-dialog-header {
+    background-color: $light-gray-color;
+    padding: 0.5rem 1rem;
+}
+
+.gray-bg {
+
+    .p-inputtext,
+    .p-inputnumber {
+        width: 100%;
+    }
+
+    .filelabel {
+        cursor: pointer;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .filelabel i {
+        display: block;
+        font-size: 22px;
+    }
+
+    .filelabel i,
+    .filelabel .title {
+        color: grey;
+        transition: 200ms color;
+    }
+
+    .filelabel:hover i {
+        color: $theme-color;
+    }
+
+    #FileInputProfileImage {
+        display: none;
+    }
+
+    img {
+        border-radius: 50%;
+        height: 100px;
+        object-fit: cover;
+        object-position: center;
+        width: 100px;
+    }
+
+    .img-default {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 575px) {
+    .card {
+        .card-header {
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 0.45rem 1rem;
+
+            h5 {
+                margin-bottom: 5px;
+            }
+
+            div.d-flex {
+                align-items: flex-start !important;
+                flex-direction: column-reverse;
+                width: 100%;
+
+                button {
+                    margin-bottom: 10px;
+                    padding: 0.2rem 20px;
+                    width: 100%;
+                }
+
+                input {
+                    margin: 0 0 10px;
+                    padding: 0.5rem 0.75rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.section-heading {
+    background: none;
+    border-bottom: 2px solid $theme-color;
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-family: $title-font-family;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    padding: 5px 0;
+
+    span {
+        font-size: 1rem;
+
+        &.header-span {
+            font-size: $font-size-level-1;
+        }
+    }
+}
+
+::ng-deep .assign-modal-dropdown {
+    width: 100%;
+
+    .p-dropdown {
+        width: 100%;
+        min-height: 50px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        background: #fff;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .p-dropdown:hover {
+        border-color: #6c63ff;
+    }
+
+    .p-dropdown.p-focus {
+        border-color: #6c63ff;
+        box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.15);
+    }
+
+    .p-dropdown-label {
+        padding: 0.75rem 1rem;
+        font-size: 15px;
+        line-height: 1.4;
+        color: #333;
+        display: flex;
+        align-items: center;
+    }
+
+    .p-dropdown-label.p-placeholder {
+        color: #9ca3af;
+        font-weight: 400;
+    }
+
+    .p-dropdown-trigger {
+        color: #6c63ff;
+        width: 3rem;
+    }
+}
+
+::ng-deep .assign-modal-dropdown .p-dropdown:not(.p-disabled).p-focus {
+    outline: none;
+}
+
+::ng-deep .p-dropdown-panel {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+::ng-deep .p-dropdown-item {
+    padding: 12px 15px;
+}
+
+::ng-deep .p-dropdown-item:hover {
+    background: #f3f0ff !important;
+}
+
+::ng-deep .p-dropdown-item.p-highlight {
+    background: #6c63ff !important;
+    color: white !important;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+}
+
+::ng-deep .p-dropdown-panel {
+    z-index: 12000 !important;
+}
+
+::ng-deep .assign-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+
+    .pi {
+        font-size: 20px;
+    }
+}
+
+::ng-deep .p-dialog .p-dialog-header {
+    background: linear-gradient(
+        135deg,
+        #4f46e5 0%,
+        #6366f1 50%,
+        #818cf8 100%
+    );
+    color: white;
+    border-radius: 6px 6px 0 0;
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+::ng-deep .p-dialog .p-dialog-content {
+    padding-top: 20px;
+}

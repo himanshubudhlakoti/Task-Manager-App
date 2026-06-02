@@ -1,0 +1,49 @@
+<header class="header">
+  <div class="container-fluid headerContianer">
+    <div class="col-12 headbar">
+      <div *ngIf="toggle">
+      </div>
+      <div class="topbar">
+        <ul class="icon-col">
+          <!-- <li>
+            <i *ngIf="toggle" class="fa fa-bars" aria-hidden="true" (click)="openSidebar()"></i>
+            <i *ngIf="!toggle" class="fa fa-times" aria-hidden="true" (click)="openSidebar()"></i>
+          </li> -->
+          <!-- <li (click)="openNotification()"> <i class="fa fa-check-circle"></i>
+            <div class="notify">
+              <span class="heartbit"></span>
+              <span class="point"></span>
+            </div>
+          </li> -->
+        </ul>
+        <div class="user-dp-avatar" (click)="openProfile()">
+          <div class="profile-dp">
+            <figure>
+              <img *ngIf="ProfileData.profileImage" [src]="ProfileData.profileImage" class="rounded-circle" alt="" />
+              <img *ngIf="!ProfileData.profileImage" src="assets/images/default/default-user.png" class="rounded-circle"
+                alt="" />
+            </figure>
+            <span>{{ ProfileData.fName| titlecase}} {{ProfileData.lName | titlecase}}.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div *ngIf="profilePopup">
+  <div class="profile-wrapper">
+    <div class="profile" [ngClass]="{'profilePadding': toggle === false}" [@slideInOut]>
+      <div class="profile-info">
+        <figure>
+          <img *ngIf="ProfileData.profileImage" [src]="ProfileData.profileImage" alt="" class="square-img">
+          <img *ngIf="!ProfileData.profileImage" src="assets/images/default/default-user.png" alt="" class="square-img">
+        </figure>
+        <div class="pf">
+          <h3>{{ProfileData.fName | titlecase}} {{ProfileData.lName | titlecase}}</h3>
+          <p>{{ProfileData.email}}</p>
+          <p>{{ProfileData.role}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

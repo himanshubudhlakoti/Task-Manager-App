@@ -1,0 +1,105 @@
+@import "./colors";
+@import "./fonts";
+
+// data-table css
+.table-responsive {
+    &::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: lighten($theme-color, 10%);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(175, 175, 175);
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(95, 94, 94, 0.808);
+        cursor: pointer;
+    }
+}
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    border: 1px solid #c8ced3;
+    border-width: 1px 1px 2px 1px;
+    font-size: 0.875rem;
+    font-weight: $font-weight-extra-bold;
+    padding: 0.3rem;
+}
+::ng-deep .p-datatable .p-sortable-column .p-sortable-column-icon.pi {
+    font-size: 0.75rem;
+}
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    border: 1px solid #c8ced3;
+    font-size: 0.875rem;
+    padding: 0.3rem;
+    .badge {
+        padding: 0.25em 0.4em 0.35rem;
+    }
+}
+::ng-deep .p-datatable .p-sortable-column:focus {
+    box-shadow: none;
+}
+::ng-deep .p-datatable .p-sortable-column.p-highlight {
+    color: $theme-color;
+    &:hover {
+        color: darken($theme-color, 10%);
+    }
+}
+::ng-deep .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+    color: $theme-color;
+}
+::ng-deep .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+::ng-deep .table-striped tbody tr:hover {
+    color: darken($theme-color, 5%);
+    // transform: scale(1.01);
+}
+::ng-deep .p-button.p-button-icon-only.p-button-rounded {
+    height: 1.5rem;
+}
+::ng-deep .p-button.p-button-help {
+    background: #2cabe3;
+    border: 1px solid #2cabe3;
+    height: 1.5rem;
+    width: 1.5rem;
+    &.btn-link {
+        background: #c8ced3;
+        border: 1px solid #c8ced3;
+    }
+    .pi {
+        font-size: 0.6rem;
+    }
+}
+::ng-deep .p-paginator {
+    border-radius: 0;
+    justify-content: flex-end;
+    .p-paginator-pages {
+        .p-paginator-page {
+            border: 1px solid lighten($theme-color, 4%);
+            color: lighten($theme-color, 10%);
+            &.p-highlight {
+                background: lighten($theme-color, 10%);
+                color: $white-color;
+            }
+        }
+    }
+    .p-paginator-first,
+    .p-paginator-prev,
+    .p-paginator-next,
+    .p-paginator-last {
+        border: 1px solid lighten($theme-color, 4%);
+        color: lighten($theme-color, 10%);
+    }
+    .p-dropdown {
+        border: 1px solid lighten($theme-color, 4%);
+    }
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+        background: lighten($theme-color, 10%);
+    }
+    .p-dropdown:not(.p-disabled).p-focus {
+        box-shadow: none;
+    }
+}

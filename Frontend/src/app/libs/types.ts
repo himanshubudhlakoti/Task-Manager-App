@@ -1,0 +1,1 @@
+export type TCustomObj = { [key: string]: any };

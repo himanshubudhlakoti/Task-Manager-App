@@ -1,0 +1,46 @@
+MANAGER------------------------
+1:
+email: manager@yopmail.com
+password: 1234567
+role: Manager
+-------------------------------
+
+
+
+
+TEAM LEADS------------------------------------------
+1: 
+email: mongodbteamlead@yopmail.com
+password: 1234567
+role: Team Lead
+
+2: 
+email: nodeteamlead@yopmail.com
+password: 1234567
+role: Team Lead
+
+3: 
+email: javateamlead@yopmail.com
+password: 1234567
+role: Team Lead
+----------------------------------------------------------
+
+
+
+
+EMPLOYEES----------------------------------------------------
+1:
+email: mohan@yopmail.com
+password: 1234567
+role: Employee
+
+2:
+email: ram@yopmail.com
+password: 1234567
+role: Employee
+
+3:
+email: himanshu@yopmail.com
+password: 1234567
+role: Employee
+----------------------------------------------------------

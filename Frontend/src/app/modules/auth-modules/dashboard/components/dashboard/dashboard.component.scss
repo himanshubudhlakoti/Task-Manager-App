@@ -1,0 +1,111 @@
+.dashboard-container {
+    padding: 20px;
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, #6c63ff, #8a7dff);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    color: #fff;
+}
+
+.welcome-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.left-section {
+    flex: 1;
+
+    h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 650px;
+        opacity: 0.95;
+    }
+}
+
+.action-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #ffffff;
+    color: #6c63ff;
+    font-weight: 600;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
+}
+
+.right-section {
+    display: flex;
+    gap: 15px;
+}
+
+.stat-box {
+    min-width: 130px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+
+    h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    span {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 992px) {
+    .welcome-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-section {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

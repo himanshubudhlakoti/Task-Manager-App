@@ -1,0 +1,108 @@
+@import "/src/custom-variable.scss";
+@import "/src/assets/sass/buttons.scss";
+@import "/src/assets/sass/colors.scss";
+
+.login-form {
+  background-image: url("../../../../../assets/images/bg-images/login-bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 80px 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  font-family: $font-family;
+  height: 100vh;
+  .layer {
+    background-color: rgb(86 135 187 / 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .card {
+      max-width: 350px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px 25px 40px;
+      margin: 0 auto 0;
+      margin-top: 66px;
+      border-radius: 2px;
+      box-shadow: 0px 2px 2px rgb(0 0 0 / 30%);
+      width: 100%;
+      .pf-img {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 10px;
+        display: block;
+        border-radius: 50%;
+      }
+      .pf-name {
+        font-size: 24px;
+        font-weight: 700;
+        color: #6c757dd9;
+        margin-bottom: -5px;
+      }
+      .form-signin {
+        label {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 500;
+          color: #6c757dd9;
+        }
+        span {
+          font-size: 14px;
+          color: $errorcolor;
+        }
+        // .forget-pass {
+        //   a {
+        //     color: $logincolor;
+        //   }
+        // }
+        // .btn-block {
+        //   display: block;
+        //   width: 50%;
+        //   padding: 4px;
+        //   color: #e9ecef;
+        //   background: $logincolor;
+        // }
+      }
+    }
+  }
+}
+.has-error {
+  input.form-control,
+  select.form-control {
+    border-color: $errorcolor;
+    color: $errorcolor;
+  }
+  .help-block {
+    color: $errorcolor;
+    font-size: 13px;
+  }
+  .tooltiperror {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+.link-to-home {
+  bottom: 5px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+input:focus {
+  border-color: lighten($theme-color, 10%);
+  box-shadow: none;
+}
+
+//For password full width
+::ng-deep .p-inputtext,
+::ng-deep .p-password {
+  width: 100%;
+}
+
+// For password error
+::ng-deep .password-error .p-inputtext {
+  border: 1px solid #ff0000;
+}

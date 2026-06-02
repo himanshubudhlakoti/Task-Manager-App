@@ -1,0 +1,77 @@
+// @import "../../../../../../../node_modules/bootstrap/scss/functions";
+// @import '../../../../../../../node_modules/bootstrap/scss/variables';
+// @import '../../../../../../../node_modules/bootstrap/scss/mixins';
+@import "../../../../../../custom-variable.scss";
+
+.main-container {
+  position: relative;
+  padding-left: 220px;
+  padding-top: 55px;
+  transition: all 0.5s ease-in-out;
+  background:$main-container-bg;
+  height: 100vh;
+  padding-bottom: 50px;
+   @include media-breakpoint-down(lg){
+    padding-left: 220px;
+   }
+   @include media-breakpoint-down(md){
+    padding-left: 0;
+   }
+  @include media-breakpoint-down(sm){ 
+   padding-left:0;
+  }
+  ::ng-deep app-main-header {
+    header {
+      padding-left: 166px;
+      @include media-breakpoint-down(md) {
+        padding-left: 0;
+      }
+      @include media-breakpoint-down(sm) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+//   app-main-footer{
+//     position: absolute;
+//     bottom: 0;
+//     background: #efefef;
+//     width: 100%;
+//     height: 40px;
+//     left: 0;
+//     padding-left:235px;
+//     padding-top: 5px;
+//     transition: all 0.5s ease-in-out;
+//     @include media-breakpoint-down(sm) {
+//       padding-left: 65px;
+//       transition: all 0.5s ease-in-out;
+//     }
+//   }
+
+.headerPaddinngOnCollaspse{
+    padding-left: 50px;
+    @include media-breakpoint-down(lg){
+      padding-left: 50px;
+     }
+     @include media-breakpoint-down(md){
+      padding-left: 0;
+     }
+    @include media-breakpoint-down(sm){
+      padding-left: 0;
+    }   
+    ::ng-deep app-main-header {
+        header {
+          padding-left: 0px;
+        }
+      }
+      // app-main-footer{
+      //   transition: all 0.5s ease-in-out;
+      //   padding-left:65px
+      // }
+}
+
+@media (max-width: 575px) {
+  .main-container {
+    padding-top: 45px;
+  }
+}

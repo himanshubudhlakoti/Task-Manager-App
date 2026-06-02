@@ -1,0 +1,13 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+.error {
+    color: $error-color;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+}
+
+.txt-box-error {
+    border: 1px solid $error-color;
+    color: $error-color;
+}

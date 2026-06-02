@@ -1,0 +1,133 @@
+$font-size-small: 12px;
+$font-size-body: 14px;
+$font-size-level-1: 16px;
+$font-size-level-2: 20px;
+$font-size-level-3: 24px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 500;
+$font-weight-bold: 600;
+$font-weight-extra-bold: 700;
+
+
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../fonts/g-fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("../fonts/g-fonts/Montserrat-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Black.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ProximaNovaABlack";
+    src: url("../fonts/MarkSimonsonProximaNovaAltBlack.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaAExtraBold";
+    src: url("../fonts/MarkSimonsonProximaNovaAltExtrabold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaABold";
+    src: url("../fonts/MarkSimonsonProximaNovaAltBold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaASemiBold";
+    src: url("../fonts/MarkSimonsonProximaNovaAltSemibold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaALight";
+    src: url("../fonts/MarkSimonsonProximaNovaAltLight.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaBold";
+    src: url("../fonts/ProximaNovaBold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaRegular";
+    src: url("../fonts/ProximaNovaRegular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ITCAvantGardeStdMd";
+    src: url("../fonts/ITCAvantGardeStdMd.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ITCAvantGardeStdBk";
+    src: url("../fonts/ITCAvantGardeStdBk.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ITCAvantGardeStdXLt";
+    src: url("../fonts/ITCAvantGardeStdXLt.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/** Font-family ***/
+$Montserrat-Regular: "Montserrat-Regular", sans-serif;
+$Montserrat-Medium: "Montserrat-Medium", sans-serif;
+$Roboto: "Roboto", sans-serif;
+$Roboto-slab: "Roboto Slab", serif;
+$Open-Sans: "Open Sans", sans-serif;
+$Nunito: "Nunito", sans-serif;
+$ITC-Avant: "ITC Avant Garde Std Md";
+$ITC-Avant-Bold: "ITC Avant Garde Std Md Bold";
+$ITC-Avant-Demi: "ITC Avant Garde Std Demi";
+$bebas-neue: "Bebas Neue";
+$bebas-neue-thin: "Bebas Neue Thin";
+$proxima-nova: "Proxima Nova";
+$avant-guard: "Avant Guard Reg";
+$gilroy: "Gilroy";
+$proxima-nova-a-black: "ProximaNovaABlack";
+$proxima-nova-a-extra-bold: "ProximaNovaAExtraBold";
+$proxima-nova-a-bold: "ProximaNovaABold";
+$proxima-nova-a-semibold: "ProximaNovaASemiBold";
+$proxima-nova-a-light: "ProximaNovaALight";
+$proxima-nova-bold: "ProximaNovaBold";
+$proxima-nova-regular: "ProximaNovaRegular";
+$ITC-Avant-Garde-Medium: "ITCAvantGardeStdMd";
+$ITC-Avant-Garde-BK: "ITCAvantGardeStdBk";
+$ITC-Avant-Garde-Light: "ITCAvantGardeStdXLt";
+
+$title-font-family: $proxima-nova-a-semibold;
+$section-title-font-family: $ITC-Avant-Garde-BK;
+$control-title-font-family: $proxima-nova-bold;

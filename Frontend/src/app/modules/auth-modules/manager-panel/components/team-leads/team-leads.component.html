@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <p-toast position="bottom-center"></p-toast>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#1b74d5" type="ball-circus" [fullScreen]="false">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Team Leads ({{count}})</h5>
+                </div>
+                <div class="card-body" *ngIf="usersData.length > 0">
+                    <div class="table-responsive">
+                        <p-table class="table table-bordered table-striped table-hover" [value]="usersData">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th class="text-center" style="width: 40px;"> # </th>
+                             
+                                    <th style="width: 150px;">Name 
+                                       
+                                </th>
+                                    <th style="width: 210px" >Email 
+                                    </th>
+                                    <th style="width: 130px">Phone Number</th>
+                                 
+                                    <th style="width: 175px" >Added At
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-user let-i="rowIndex">
+                                <tr>
+                                    <td class="text-center"> {{((filters.pageNumber - 1) * filters.limit) + (i + 1)}}
+                                    </td>
+                                    <td>{{user.fName | titlecase}} {{user.lName | titlecase}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.phoneNo}}</td>
+                                    <td>{{user.addedAt | date:'MMM d, y, h:mm a'}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                    <p-paginator [rows]="filters.limit" [totalRecords]="count"
+                        [rowsPerPageOptions]="paginationSettings.ROW_PER_PAGE_OPTIONS" (onPageChange)="setPage($event)">
+                    </p-paginator>
+                </div>
+                <div class="card-body" *ngIf="usersData.length === 0">
+                    <h3 class="norecord">No record found(s)</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

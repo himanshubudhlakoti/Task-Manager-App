@@ -1,0 +1,89 @@
+<div class="sidebar" [ngClass]="toggle == true ? 'sidebarWidth' : 'minSidebarWidth'">
+    <div class="row" id="body-row">
+        <div id="sidebar-container" class="sidebar-expanded">
+            <i class="fa fa-times close-btn" (click)="close()"></i>
+            <div class="navbar-brand">
+                <div class="logo-icon">
+                    <span class="logo-text">
+                    </span>
+                </div>
+            </div>
+            <ul class="list-group scrollCss">
+                <a class="sidebar-link" [routerLink]="routesList.DASHBOARD.path" routerLinkActive="active-link"
+                    (click)="close()">
+                    <div class="d-flex list-img">
+                        <span class="fa fa-dashboard icon"></span>
+                        <span class="menu-collapsed">{{ routesList.DASHBOARD.name }}</span>
+                    </div>
+                </a>
+                <ng-container *ngIf="currentUserRole === userRoles.MANAGER">
+                    <a class="sidebar-link" [routerLink]="routesList.TEAM_LEADS.path" routerLinkActive="active-link"
+                        (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="fa fa-users icon"></span>
+                            <span class="menu-collapsed">{{ routesList.TEAM_LEADS.name }}</span>
+                        </div>
+                    </a>
+
+                    <a class="sidebar-link" [routerLink]="routesList.EMPLOYEES.path" routerLinkActive="active-link"
+                        (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="fa fa-users icon"></span>
+                            <span class="menu-collapsed">{{ routesList.EMPLOYEES.name }}</span>
+                        </div>
+                    </a>
+
+                     <a class="sidebar-link" [routerLink]="routesList.MANAGER_TASKS.path" routerLinkActive="active-link"
+                        (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="fa fa-list icon"></span>
+                            <span class="menu-collapsed">{{ routesList.MANAGER_TASKS.name }}</span>
+                        </div>
+                    </a>
+
+                     <a class="sidebar-link" [routerLink]="routesList.LEADS_TASK.path" routerLinkActive="active-link"
+                        (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="fa fa-list icon"></span>
+                            <span class="menu-collapsed">{{ routesList.LEADS_TASK.name }}</span>
+                        </div>
+                    </a>
+                </ng-container>
+
+                <ng-container *ngIf="currentUserRole === userRoles.EMPLOYEE">
+                    <a class="sidebar-link" [routerLink]="routesList.EMPLOYEES_TASKS.path"
+                        routerLinkActive="active-link" (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="fa fa-users icon"></span>
+                            <span class="menu-collapsed">{{ routesList.EMPLOYEES_TASKS.name }}</span>
+                        </div>
+                    </a>
+                </ng-container>
+
+                <ng-container *ngIf="currentUserRole === userRoles.TEAM_LEADER">
+                    <a class="sidebar-link" [routerLink]="routesList.TEAM_LEADS_TASKS.path"
+                        routerLinkActive="active-link" (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="pi pi-list"></span>
+                            <span class="menu-collapsed">{{ routesList.TEAM_LEADS_TASKS.name }}</span>
+                        </div>
+                    </a>
+
+                    <a class="sidebar-link" [routerLink]="routesList.TEAM_LEADS_EMPLOYEES_TASKS.path"
+                        routerLinkActive="active-link" (click)="close()">
+                        <div class="d-flex list-img">
+                            <span class="pi pi-list"></span>
+                            <span class="menu-collapsed">{{ routesList.TEAM_LEADS_EMPLOYEES_TASKS.name }} </span>
+                        </div>
+                    </a>
+                </ng-container>
+                <a class="sidebar-link logout" (click)="logout()" routerLinkActive="active-link">
+                    <div class="d-flex list-img">
+                        <i class="fa fa-power-off icon"></i>
+                        <span class="menu-collapsed">{{ routesList.LOGOUT.name }}</span>
+                    </div>
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>

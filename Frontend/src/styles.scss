@@ -1,0 +1,41 @@
+@import "../src/custom-variable.scss";
+body {
+    color: #333;
+    font-size: 15px;
+    font-family: $font-family;
+    line-height: 2px;
+    background: $main-container-bg;
+    &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        background: lighten($header-bg-color, 10%);
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #fff;
+        box-shadow: 0px 3px 6px #00000029;
+        border-radius: 22px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(95, 94, 94, 0.808);
+        cursor: pointer;
+      }
+}
+
+ul, li {
+    margin-bottom:0;
+    margin-top: 0;
+    padding: 0px;
+    list-style: none;
+}
+
+a, button{
+  transition: all .5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .minSidebarWidth {
+    width:20px;
+      }
+}
+

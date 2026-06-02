@@ -1,0 +1,499 @@
+@import "../../../../../../custom-variable.scss";
+.header {
+  background: #7563df;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+  @include media-breakpoint-down(md) {
+    .headerContianer {
+      padding: 0;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .headerContianer {
+      padding: 0;
+    }
+  }
+  .headbar {
+    padding-left: 0;
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+    }
+    .topbar {
+      padding: 0px 36px;
+      vertical-align: middle;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      @include media-breakpoint-down(md) {
+        padding: 0;
+      }
+      @include media-breakpoint-down(sm) {
+        padding: 0;
+      }
+      .icon-col {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0px;
+        li {
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+          i {
+            padding: 0 10px;
+            font-size: 26px;
+            color: $white;height: 40px;
+            line-height: 40px;
+          }
+          &:hover {
+            background-color: darken($header-bg-color, 10%);
+          }
+          .notify {
+            position: relative;
+            top: -30px;
+            right: -7px;
+            .heartbit {
+              position: absolute;
+              top: -2px;
+              left: 24px;
+              height: 5px;
+              width: 5px;
+              z-index: 10;
+              border: 3px soild $notif-color;
+              border-radius: 70px;
+              animation: animate 1s linear infinite;
+            }
+
+            @keyframes animate {
+              0% {
+                box-shadow: 0 0 0 0 rgb(255 109 74 / 70%),
+                  0 0 0 0 rgb(255 109 74 / 70%);
+              }
+              40% {
+                box-shadow: 0 0 0 5px rgb(255 109 74 / 47%),
+                  0 0 0 0 rgb(255 109 74 / 9%);
+              }
+              80% {
+                box-shadow: 0 0 0 10px rgb(255 109 74 / 0%),
+                  0 0 0 10px rgb(255 109 74 / 0%);
+              }
+              100% {
+                box-shadow: 0 0 0 10px rgb(255 109 74 / 0%),
+                  0 0 0 10px rgb(255 109 74 / 0%);
+              }
+            }
+            .point {
+              width: 6px;
+              height: 6px;
+              border-radius: 30px;
+              background-color: $notif-color;
+              position: absolute;
+              right: 13px;
+              top: -2px;
+            }
+          }
+        }
+      }
+      .user-dp-avatar {
+        cursor: pointer;
+        .profile-dp {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 40px;
+          padding: 0 5px;
+          transition: all 0.5s ease-in-out;
+          figure {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            background: darken($white, 10%);
+            text-align: center;
+            span {
+              font-size: 30px;
+              font-weight: 600;
+              line-height: 28px;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          span {
+            font-size: 16px;
+            font-weight: 500;
+            margin-left: 10px;
+            color: $white;
+            @include media-breakpoint-down(sm) {
+              display: none;
+            }
+          }
+          &:hover {
+            background-color: darken($header-bg-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+.notification-wrapper {
+  display: flex;
+  .notification {
+    position: fixed;
+    top: 56px;
+    width: 256px;
+    border: $border;
+    background-color: $bg-color;
+    left: 248px;
+    z-index: 99999;
+    border: 1px solid #bfbfbf;
+    background-color: $popups-bg-color;
+    box-shadow: 5px 3px 5px 2px lighten($gray, 10%);
+    @include media-breakpoint-down(lg) {
+      left: 250px;
+    }
+    @include media-breakpoint-down(md) {
+      left: 32px;
+      z-index: 9999;
+    }
+    @include media-breakpoint-down(sm) {
+      left: 28px;
+      z-index: 9999;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 28px;
+      border: 12px solid;
+      border-color: transparent transparent #f2f4f5 transparent;
+      transform: translateX(-50%);
+      z-index: 2;
+      @include media-breakpoint-down(sm) {
+        left: 34px;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 28px;
+      border: 12px solid;
+      border-color: transparent transparent lighten($gray, 30%) transparent;
+      transform: translateX(-50%);
+      z-index: 1;
+      @include media-breakpoint-down(sm) {
+        left: 34px;
+      }
+    }
+    .head {
+      font-size: 15px;
+      color: $gray;
+      font-weight: 700;
+      font-family: $font-family-menus;
+      margin-left: 25px;
+      line-height: 0.7;
+      padding: 6px 20px 0px;
+      @include media-breakpoint-down(sm) {
+        font-size: 13px;
+      }
+    }
+
+    .notify {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 0px;
+      cursor: pointer;
+    }
+
+    .notify:hover {
+      background-color: #eee;
+    }
+    ul {
+      max-height: 450px;
+      overflow-y: auto;
+      @include media-breakpoint-down(md) {
+        max-height: 360px;
+        overflow-y: auto;
+      }
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px 0 25px;
+        border-bottom: 1px solid #e4e4df5e;
+        cursor: pointer;
+        &:hover {
+          background: #f7fafc;
+        }
+        .btn-circle {
+          border-radius: 100%;
+          width: 40px;
+          height: 40px;
+        }
+        .notif-info {
+          left: 30px;
+        }
+        span {
+          font-size: 15px;
+          color: $gray;
+          font-weight: 500;
+          font-family: $font-family-menus;
+          @include media-breakpoint-down(md) {
+            font-size: 14px;
+          }
+          @include media-breakpoint-down(sm) {
+            font-size: 12px;
+          }
+        }
+        p {
+          font-size: 11px;
+          color: #8898aa;
+          font-family: $font-family-menus;
+        }
+      }
+    }
+    .btn-center {
+      text-align: center;
+      .task-btn {
+        border: none;
+        background: none;
+        text-align: center;
+        padding: 11px 20px 15px;
+        border-top: $border;
+        font-size: 15px;
+        color: $gray;
+        font-weight: 700;
+        font-family: $font-family-menus;
+        @include media-breakpoint-down(sm) {
+          font-size: 13px;
+        }
+        &:hover {
+          background: #f7fafc;
+        }
+      }
+    }
+  }
+  .notificationPadding {
+    left: 72px;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    &:before {
+      top: -20px;
+      left: 40px;
+      border: 10px solid $white;
+      border-color: transparent transparent #f2f4f5 transparent;
+      transform: translateX(-50%);
+    }
+    &:after {
+      top: -20px;
+      left: 40px;
+      border: 10px solid;
+      border-color: transparent transparent lighten($gray, 30%) transparent;
+      transform: translateX(-50%);
+      z-index: 1;
+      @include media-breakpoint-down(sm) {
+        left: 34px;
+      }
+    }
+  }
+}
+
+.profile-wrapper {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  .profile {
+    position: fixed;
+    top: 52px;
+    width: 262px;
+    background-color: darken($white, 10%);
+    right: 20px;
+    z-index: 99999;
+    box-shadow: 5px 2px 5px 2px #aaa;
+    @include media-breakpoint-down(md) {
+      right: 6px;
+    }
+    @include media-breakpoint-down(sm) {
+      right: 12px;
+      width: 256px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: -24px;
+      right: 86px;
+      border: 12px solid #343a40;
+      border-color: #ce505000 transparent $header-bg-color transparent;
+      :hover & {
+        color: $header-bg-color;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      &:before {
+        content: "";
+        position: absolute;
+        top: -23px;
+        right: 46px;
+        border: 12px solid #343a40;
+        border-color: #ce505000 transparent $header-bg-color transparent;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      &:before {
+        content: "";
+        position: absolute;
+        top: -23px;
+        right: 10px;
+        border: 12px solid #343a40;
+        border-color: #ce505000 transparent $header-bg-color transparent;
+      }
+    }
+    .profile-info {
+      display: flex;
+      justify-content: space-between;
+      align-items :center;
+      background-color: $header-bg-color;
+      padding: 10px 8px;
+      margin-bottom: 10px;
+      color: $white;
+      font-family: $font-family-menus;
+      cursor: pointer;
+      &:hover {
+        background: $header-bg-color;
+      }
+      figure{
+        margin:0;
+        width: 70px;
+        height:70px;
+        overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+      }
+    }
+      .pf {
+        margin-left: 0;
+        padding: 8px;
+        width: calc(100% - 70px);
+        @include media-breakpoint-down(md) {
+          padding: 14px;
+        }
+        @include media-breakpoint-down(sm) {
+          padding: 14px;
+        }
+        h3 {
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 15px;
+          margin-bottom: 5px;
+          word-wrap: break-word;
+          @include media-breakpoint-down(xs) {
+            font-size: 12px;
+          }
+        }
+        p {
+          margin-bottom: 5px;
+          word-wrap: break-word;
+          font-size: 11px;
+          line-height: 12px;
+          @include media-breakpoint-down(xs) {
+            font-size: 10px;
+          }
+          &:last-child{
+            margin: 0;
+          }
+        }
+      }
+    }
+    .pf-detail {
+      display: block;
+      text-align: inherit;
+      color: $gray;
+      padding: 0.65rem 1rem;
+      margin-bottom: 10px;
+      text-decoration: none;
+      &:hover {
+        background-color: lighten($header-bg-color, 15%);
+        color: $white;
+      }
+      i {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      span {
+        font-size: 15px;
+        @include media-breakpoint-down(md) {
+          font-size: 13px;
+        }
+        @include media-breakpoint-down(sm) {
+          font-size: 12px;
+        }
+      }
+    }
+    hr.solid {
+      margin-top: 0;
+      margin-bottom: 0;
+      border: 0;
+      border-top: 1px solid rgb(0 0 0 / 3%);
+    }
+    // .view-btn {
+    //   padding: 5px 0 10px 17px;
+    //   .btn {
+    //     border-radius: 12rem;
+    //     padding: 2px 5px 4px 5px;
+    //     font-size: 13px;
+    //   }
+    //   .btn-rounded.btn {
+    //     padding: 0.25rem 0.5rem;
+    //     font-size: 12px;
+    //   }
+    // }
+  }
+  .profilePadding {
+    right: 12px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -24px;
+      right: 90px;
+      border: 12px solid #343a40;
+      border-color: #ce505000 transparent $header-bg-color transparent;
+    }
+    @include media-breakpoint-down(lg) {
+      &:before {
+        top: -24px;
+        right: 90px;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      &:before {
+        top: -24px;
+        right: 42px;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      &:before {
+        content: "";
+        position: absolute;
+        top: -23px;
+        right: 12px;
+        border: 12px solid #343a40;
+        border-color: #ce505000 transparent $header-bg-color transparent;
+      }
+    }
+  }
+}
