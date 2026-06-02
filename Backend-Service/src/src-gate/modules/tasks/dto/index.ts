@@ -1,6 +1,6 @@
 
-import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength, MaxLength, IsEnum } from 'class-validator';
-import { TaskStatuses, UserRoles } from 'src/src-gate/libs/constants/enums';
+import { IsNotEmpty, IsString, IsEnum } from 'class-validator';
+import { TaskStatuses } from 'src/src-gate/libs/constants/enums';
 
 export class createTaskDto {
     @IsString()

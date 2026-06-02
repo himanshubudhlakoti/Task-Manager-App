@@ -15,8 +15,8 @@ import { checkIfAlreadyExists } from "src/src-gate/libs/functions/db.queries";
 import { getTrimmedString } from "src/src-gate/libs/functions/helper";
 import { CreateUserDto, UserLoginDto } from "../dto";
 import { JWT_CONFIG } from "src/src-gate/libs/security/constants";
-import { hoursToMs } from "src/src-gate/libs/functions/helper";
 import { IJwt } from "src/src-gate/libs/interfaces";
+import { durationToMilliseconds } from "src/src-gate/libs/functions/helper";
 @Injectable()
 export class AuthService {
     constructor(
@@ -80,7 +80,7 @@ export class AuthService {
                     httpOnly: true,
                     secure: false,
                     sameSite: 'lax',
-                    maxAge: 30 * 24 * 60 * 60 * 1000
+                    maxAge: durationToMilliseconds(JWT_CONFIG.refreshTokenExpiresIn)
                 });
                 return getOkResObj(resData, 1);
             } else {
