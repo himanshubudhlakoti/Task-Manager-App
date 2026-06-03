@@ -26,7 +26,7 @@ export class User extends Base {
     @Prop({ type: String, default: null })
     token: string;
 
-    @Prop({ enum: UserRoles, required: true })
+    @Prop({ type: String, enum: UserRoles, required: true })
     role: UserRoles;
 
     //if role is manager/ teamlead then this field wil be empty otherwise it will have teamlead id to which 

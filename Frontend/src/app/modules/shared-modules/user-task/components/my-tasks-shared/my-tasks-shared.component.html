@@ -1,0 +1,284 @@
+<p-toast position="bottom-center"></p-toast>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#1b74d5" type="ball-circus" [fullScreen]="false">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<!-- group 1 starts -->
+<div class="task-board-wrapper">
+    <div class="task-header-actions">
+        <button class="add-task-btn-top" (click)="openCreateTaskModal()">
+            <i class="pi pi-plus"></i>
+            Create Task
+        </button>
+    </div>
+    <div class="board-container">
+
+        <!-- In Progress -->
+        <div class="board-column">
+
+            <div class="column-header">
+                <span>IN PROGRESS</span>
+                <span class="count">{{inProgressTasks.length}}</span>
+            </div>
+
+            <div class="task-list">
+
+                <div class="task-card" *ngFor="let task of inProgressTasks">
+
+                    <div class="task-status">
+                        <i pTooltip="Edit Task" tooltipPosition="top" class="edit-btn pi pi-pencil"
+                            (click)="setEditTaskModal(task)">
+                        </i>
+                    </div>
+
+                    <div class="title-content">
+                        {{task.title | titlecase}}
+                    </div>
+
+                    <div class="task-content">
+                        {{task.description }}
+                    </div>
+
+                    <div class="task-footer">
+
+                        <div class="task-info">
+
+                            <div class="assigned-user">
+
+                                <div class="circle-icon">
+                                    <i class="pi pi-user" pTooltip="Assigned By:  {{task.assignedById == task.assignedToId ? 'Self' : (task.assignedByName |
+                                    titlecase)}}" tooltipPosition="right"></i>
+                                </div>
+
+                                <span class="assigned-user-name">
+                                    {{task.assignedById == task.assignedToId ? 'Self' : (task.assignedByName |
+                                    titlecase)}}
+                                </span>
+
+                                <span class="assigned-date">
+                                    | {{ task.addedAt | date:'dd MMM yyyy' }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PENDING -->
+        <div class="board-column">
+
+            <div class="column-header">
+                <span>PENDING</span>
+                <span class="count">{{pendingTasks.length}}</span>
+            </div>
+
+            <div class="task-list">
+
+                <div class="task-card" *ngFor="let task of pendingTasks">
+
+                    <div class="task-status">
+                        <i pTooltip="Edit Task" tooltipPosition="top" class="edit-btn pi pi-pencil"
+                            (click)="setEditTaskModal(task)">
+                        </i>
+                    </div>
+
+                    <div class="title-content">
+                        {{task.title | titlecase}}
+                    </div>
+
+                    <div class="task-content">
+                        {{task.description }}
+                    </div>
+
+                    <div class="task-footer">
+                        <div class="task-info">
+
+                            <div class="assigned-user">
+
+                                <div class="circle-icon">
+                                    <i class="pi pi-user" pTooltip="Assigned By:  {{task.assignedById == task.assignedToId ? 'Self' : (task.assignedByName |
+                                    titlecase)}}" tooltipPosition="right"></i>
+                                </div>
+
+                                <span class="assigned-user-name">
+                                    {{task.assignedById == task.assignedToId ? 'Self' : (task.assignedByName |
+                                    titlecase)}}
+                                </span>
+
+                                <span class="assigned-date">
+                                    | {{ task.addedAt | date:'dd MMM yyyy' }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TESTING -->
+        <div class="board-column">
+
+            <div class="column-header">
+                <span>COMPLETED</span>
+                <span class="count">{{completedTasks.length}}</span>
+            </div>
+
+            <div class="task-list">
+
+                <div class="task-card" *ngFor="let task of completedTasks">
+
+                    <div class="task-status">
+                        <i pTooltip="Edit Task" tooltipPosition="top" class="edit-btn pi pi-pencil"
+                            (click)="setEditTaskModal(task)">
+                        </i>
+                    </div>
+
+                    <div class="title-content">
+                        {{task.title | titlecase}}
+                    </div>
+
+                    <div class="task-content">
+                        {{task.description }}
+                    </div>
+
+                    <div class="task-footer">
+
+                        <div class="task-info">
+
+                            <div class="assigned-user">
+
+                                <div class="circle-icon">
+                                    <i class="pi pi-user" pTooltip="Assigned By:  {{task.assignedById == task.assignedToId ? 'Self' : (task.assignedByName |
+                                    titlecase)}}" tooltipPosition="right"></i>
+                                </div>
+
+                                <span class="assigned-user-name">
+                                    {{task.assignedById == task.assignedToId ? 'Self' : (task.assignedByName |
+                                    titlecase)}}
+                                </span>
+
+                                <span class="assigned-date">
+                                    | {{ task.addedAt | date:'dd MMM yyyy' }}
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ends -->
+
+<!-- group 2 starts-->
+<div class="task-modal-wrapper">
+    <p-dialog [header]="actionType === actionTypes.CREATE ? 'Create Personal Task' : 'Edit Task'"
+        [(visible)]="showTaskModal" [modal]="true" [style]="{ width: '50vw' }" [baseZIndex]="9999" [draggable]="false"
+        [resizable]="false">
+
+        <form [formGroup]="taskForm">
+
+            <div class="row">
+
+                <!-- Title -->
+                <div class="col-md-12">
+                    <div class="form-group">
+
+                        <h6>Task Title <span class="required">*</span></h6>
+
+                        <input pInputText formControlName="title" placeholder="Enter task title" class="w-100">
+
+                        <small class="error" *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched">
+
+                            Task title is required (3-100 characters)
+                        </small>
+
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="col-md-12">
+                    <div class="form-group">
+
+                        <h6>Description <span class="required">*</span></h6>
+
+                        <textarea pInputTextarea rows="5" formControlName="description"
+                            placeholder="Enter task description" class="w-100">
+                    </textarea>
+
+                        <small class="error"
+                            *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched">
+
+                            Description is required (10-500 characters)
+                        </small>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+
+                        <h6>Status <span class="required">*</span></h6>
+
+                        <div class="status-container">
+
+                            <button type="button" pButton *ngFor="let item of statusList" [label]="item.label"
+                                [class.active-btn]="taskForm.get('status')?.value === item.value"
+                                [class.inactive-btn]="taskForm.get('status')?.value !== item.value"
+                                (click)="taskForm.get('status')?.setValue(item.value)">
+                            </button>
+
+                        </div>
+                        <small class="error" *ngIf="taskForm.get('status')?.invalid && taskForm.get('status')?.touched">
+
+                            Please select a status.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+        <p-footer>
+
+            <div class="modal-footer-btns">
+
+                <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-secondary"
+                    (click)="closeTaskModal()">
+                </button>
+
+                <button *ngIf="actionType === actionTypes.CREATE" pButton type="button" label="Create"
+                    icon="pi pi-check" class="p-button-success" [loading]="loader" (click)="createTaskForSelf()">
+                </button>
+
+                <button *ngIf="actionType === actionTypes.EDIT" pButton type="button" label="Save Changes"
+                    icon="pi pi-check" class="p-button-success" [loading]="loader" (click)="editTask()">
+                </button>
+
+            </div>
+
+        </p-footer>
+
+    </p-dialog>
+</div>
+<!-- ends -->

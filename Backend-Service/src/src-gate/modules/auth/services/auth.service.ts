@@ -16,7 +16,7 @@ import { getTrimmedString } from "src/src-gate/libs/functions/helper";
 import { CreateUserDto, UserLoginDto } from "../dto";
 import { JWT_CONFIG } from "src/src-gate/libs/security/constants";
 import { IJwt } from "src/src-gate/libs/interfaces";
-import { durationToMilliseconds } from "src/src-gate/libs/functions/helper";
+import { durationToMilliseconds, getTrimmedLowerCaseString } from "src/src-gate/libs/functions/helper";
 @Injectable()
 export class AuthService {
     constructor(
@@ -46,7 +46,7 @@ export class AuthService {
         }
 
         const { email, password } = loginData,
-            condition = { email, role: USER_ROLE, isDeleted: false },
+            condition = { email: getTrimmedLowerCaseString(email), role: USER_ROLE, isDeleted: false },
             project = { _id: 1, password: 1, email: 1 };
 
         //Check email is valid or invalid
@@ -94,7 +94,7 @@ export class AuthService {
     async addUser(userData: CreateUserDto): Promise<ICreatedResponse> {
 
         userData.password = await getHashPassword(userData.password);
-        userData.email = getTrimmedString(userData.email);
+        userData.email = getTrimmedLowerCaseString(userData.email);
         const { USER_MODEL } = this.databaseService.getDbModels();
         const preSaveCondition: { email: string, role: UserRoles } =
         {

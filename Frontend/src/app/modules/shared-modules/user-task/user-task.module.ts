@@ -15,21 +15,14 @@ import { ToastModule } from 'primeng/toast';
 import { CheckboxModule } from 'primeng/checkbox';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
-import { MessageService } from 'primeng/api';
-
-import { ManagerPanelRoutingModule } from './manager-panel-routing.module';
-import { EmployeesComponent } from "./components/employees/employees.component";
-import { TeamLeadsComponent } from "./components/team-leads/team-leads.component";
-import { TasksComponent } from './components/tasks/tasks.component';
-import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
-import { UserTaskModule } from "src/app/modules/shared-modules/user-task/user-task.module"
+import { UserTasksService } from "./services/user-tasks.service";
+import { MyTasksSharedComponent } from './components/my-tasks-shared/my-tasks-shared.component';
+import { MyTeamTasksSharedComponent } from './components/my-team-tasks-shared/my-team-tasks-shared.component';
 
 @NgModule({
   declarations: [
-    EmployeesComponent,
-    TeamLeadsComponent,
-    TasksComponent,
-    MyTasksComponent
+    MyTasksSharedComponent,
+    MyTeamTasksSharedComponent
   ],
   imports: [
     CommonModule,
@@ -47,13 +40,12 @@ import { UserTaskModule } from "src/app/modules/shared-modules/user-task/user-ta
     ToastModule,
     CheckboxModule,
     KeyFilterModule,
-    NgxSpinnerModule,
-    ManagerPanelRoutingModule,
-    UserTaskModule
+    NgxSpinnerModule
   ],
-  providers: [
-    NgxSpinnerService,
-    MessageService
+  providers: [UserTasksService],
+  exports: [
+    MyTasksSharedComponent,
+    MyTeamTasksSharedComponent
   ]
 })
-export class ManagerPanelModule { }
+export class UserTaskModule { }

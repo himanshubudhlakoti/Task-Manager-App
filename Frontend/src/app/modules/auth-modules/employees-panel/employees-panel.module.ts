@@ -12,6 +12,7 @@ import { MessageService } from 'primeng/api';
 import { EmployeesPanelService } from './services/employees-panel.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from 'primeng/tooltip';
+import { UserTaskModule } from "src/app/modules/shared-modules/user-task/user-task.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TooltipModule } from 'primeng/tooltip';
     ToastModule,
     ButtonModule,
     TooltipModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UserTaskModule
   ],
   providers: [EmployeesPanelService, MessageService]
 })

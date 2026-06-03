@@ -28,3 +28,12 @@ export const durationToMilliseconds = (duration: string): number => {
     };
     return value * multipliers[unit];
 }
+
+export const getTrimmedLowerCaseString = (str: string): string => {
+
+    if (str === null || str === undefined) {
+        return str;
+    }
+
+    return str.trim().toLowerCase();
+};

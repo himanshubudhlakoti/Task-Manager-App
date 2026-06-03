@@ -15,6 +15,7 @@ import { TeamLeadsPanelService } from './services/team-leads-panel.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from 'primeng/tooltip';
 import { CheckboxModule } from 'primeng/checkbox';
+import { UserTaskModule } from "src/app/modules/shared-modules/user-task/user-task.module";
 
 @NgModule({
   declarations: [TeamLeadsTasksComponent, TeamLeadsEmployeeComponent],
@@ -31,6 +32,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     TooltipModule,
     CheckboxModule,
     TeamLeadsPanelRoutingModule,
+    UserTaskModule
   ],
   providers: [TeamLeadsPanelService, MessageService]
 })
