@@ -17,7 +17,7 @@ export class SignUpComponent {
   public roleList = [
     { label: UserRoles.EMPLOYEE, value: UserRoles.EMPLOYEE },
     { label: UserRoles.TEAM_LEADER, value: UserRoles.TEAM_LEADER },
-    { label: UserRoles.MANAGER, value: UserRoles.MANAGER }
+    // { label: UserRoles.MANAGER, value: UserRoles.MANAGER }
   ];
   public showErr: boolean = false;
   public loader: boolean = false;

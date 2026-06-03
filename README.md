@@ -31,3 +31,10 @@ Clone the project Using 'git clone <repo url>'
 4: Run command 'npm run start:dev'
 5: Now backend service is listening port 9090 and ready to go
 # ==================================================================
+
+
+# =================USERS CREDENTIALS======================
+NOTE: There is a file "users-creds.txt" available at the project root folder..
+I have created some  users and assigned already tasks to them
+you can check this file "users-creds.txt" for accessing their credentials...
+In this way you can access the task manager app without creating any user by yourself...
