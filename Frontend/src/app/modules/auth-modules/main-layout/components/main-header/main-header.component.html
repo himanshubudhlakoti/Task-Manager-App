@@ -23,7 +23,8 @@
               <img *ngIf="!ProfileData.profileImage" src="assets/images/default/default-user.png" class="rounded-circle"
                 alt="" />
             </figure>
-            <span>{{ ProfileData.fName| titlecase}} {{ProfileData.lName | titlecase}}.</span>
+            <span>{{ ProfileData.fName| titlecase}} |<span
+                style="font-weight: 200; font-size: 13px;    margin-left: 6px;">{{ProfileData.role }}</span></span>
           </div>
         </div>
       </div>
