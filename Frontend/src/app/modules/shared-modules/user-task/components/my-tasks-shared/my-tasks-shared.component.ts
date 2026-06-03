@@ -225,6 +225,10 @@ export class MyTasksSharedComponent implements OnInit {
     }
   }
 
+  taskDeletedTriggered(): void {
+    this.getRefreshedData();
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

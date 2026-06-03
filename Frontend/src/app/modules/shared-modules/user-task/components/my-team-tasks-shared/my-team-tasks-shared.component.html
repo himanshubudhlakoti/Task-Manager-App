@@ -36,6 +36,8 @@
                         <i pTooltip="Edit Task" tooltipPosition="top" class="edit-btn pi pi-pencil"
                             (click)="setEditTaskModal(task)">
                         </i>
+                         <app-delete-task [taskId]="task._id" (taskDeletedTriggered)="taskDeletedTriggered()">
+                        </app-delete-task>
                     </div>
 
                     <div class="title-content">
@@ -94,6 +96,8 @@
                         <i pTooltip="Edit Task" tooltipPosition="top" class="edit-btn pi pi-pencil"
                             (click)="setEditTaskModal(task)">
                         </i>
+                         <app-delete-task [taskId]="task._id" (taskDeletedTriggered)="taskDeletedTriggered()">
+                        </app-delete-task>
                     </div>
 
                     <div class="title-content">
@@ -151,6 +155,8 @@
                         <i pTooltip="Edit Task" tooltipPosition="top" class="edit-btn pi pi-pencil"
                             (click)="setEditTaskModal(task)">
                         </i>
+                         <app-delete-task [taskId]="task._id" (taskDeletedTriggered)="taskDeletedTriggered()">
+                        </app-delete-task>
                     </div>
 
                     <div class="title-content">

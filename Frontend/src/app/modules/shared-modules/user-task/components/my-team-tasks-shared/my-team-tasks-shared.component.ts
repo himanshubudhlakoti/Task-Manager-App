@@ -380,6 +380,17 @@ export class MyTeamTasksSharedComponent implements OnInit {
     });
   }
 
+  taskDeletedTriggered(): void {
+
+    if (this.role === UserRoles.TEAM_LEADER) {
+      this.getEmployeeTasksById();
+    }
+    if (this.role === UserRoles.MANAGER) {
+      this.getTeamLeadTasksById();
+    }
+
+  }
+
   showToastr(success: boolean, info: any, sticky: boolean = false): void {
 
     this.messageService.clear()

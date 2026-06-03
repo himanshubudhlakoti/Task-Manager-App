@@ -18,11 +18,13 @@ import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { UserTasksService } from "./services/user-tasks.service";
 import { MyTasksSharedComponent } from './components/my-tasks-shared/my-tasks-shared.component';
 import { MyTeamTasksSharedComponent } from './components/my-team-tasks-shared/my-team-tasks-shared.component';
+import { DeleteTaskComponent } from './components/delete-task/delete-task.component';
 
 @NgModule({
   declarations: [
     MyTasksSharedComponent,
-    MyTeamTasksSharedComponent
+    MyTeamTasksSharedComponent,
+    DeleteTaskComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { MyTeamTasksSharedComponent } from './components/my-team-tasks-shared/my
   providers: [UserTasksService],
   exports: [
     MyTasksSharedComponent,
-    MyTeamTasksSharedComponent
+    MyTeamTasksSharedComponent,
+    DeleteTaskComponent
   ]
 })
 export class UserTaskModule { }

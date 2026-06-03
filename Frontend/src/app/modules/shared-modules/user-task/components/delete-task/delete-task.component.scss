@@ -1,0 +1,111 @@
+.delete-btn {
+    color: red;
+    font-size: 1.5rem; // increase icon size
+    margin-left: 10px; // add left spacing
+    cursor: pointer;
+}
+
+
+.delete-task-modal-wrapper {
+
+    .form-group {
+        margin-bottom: 20px;
+
+        h6 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+    }
+
+    .required {
+        color: #e53935;
+    }
+
+    .error {
+        display: block;
+        margin-top: 5px;
+        color: #e53935;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .modal-footer-btns {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    /* Status Button Group */
+
+    .status-container {
+        display: inline-flex;
+        gap: 8px;
+        padding: 8px;
+        background: #f5f1eb;
+        border: 1px solid #e5ddd3;
+        border-radius: 12px;
+        width: fit-content;
+    }
+
+    .status-container button {
+        min-width: 130px;
+        border-radius: 8px !important;
+        border: none !important;
+        transition: all 0.2s ease;
+    }
+
+    .active-btn {
+        background: #6c5ce7 !important;
+        color: #fff !important;
+    }
+
+    .inactive-btn {
+        background: #e8ddd1 !important;
+        color: #6d5d4f !important;
+    }
+
+    .inactive-btn:hover {
+        background: #ddd0c2 !important;
+    }
+
+    /* PrimeNG Dialog */
+
+    ::ng-deep .p-dialog {
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    ::ng-deep .p-dialog .p-dialog-header {
+        background: #6c5ce7;
+        color: #fff;
+        padding: 1.25rem;
+    }
+
+    ::ng-deep .p-dialog .p-dialog-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    ::ng-deep .p-dialog-content {
+        padding: 1.5rem;
+    }
+
+    ::ng-deep textarea {
+        resize: none;
+    }
+
+    ::ng-deep .p-inputtext {
+        width: 100%;
+    }
+
+    ::ng-deep .p-button {
+        border-radius: 6px;
+    }
+}

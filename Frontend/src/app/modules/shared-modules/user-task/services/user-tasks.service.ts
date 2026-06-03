@@ -19,4 +19,8 @@ export class UserTasksService {
   updateTask(taskId: string, payload: object): Observable<any> {
     return this.http.patch(`${environment.serverUrl}tasks/update-task/${taskId}`, payload).pipe(catchError(errorHandler));
   }
+
+  deleteTask(taskId: string): Observable<any> {
+    return this.http.patch(`${environment.serverUrl}tasks/delete-task/${taskId}`, {}).pipe(catchError(errorHandler));
+  }
 }
