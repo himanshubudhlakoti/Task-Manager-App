@@ -1,37 +1,87 @@
+# Task Manager App
 
-# Install Dependencies
+A full-stack task management application built with **Angular** (frontend) and **NestJS** (backend).
 
-Install node version--> v16.20.2
-Install angular CLI version --> 11.2.10
-NPM --> 8.19.4
+---
 
-Clone the project Using 'git clone <repo url>'
+## Prerequisites
 
+Ensure the following versions are installed before getting started:
 
+| Tool        | Version   |
+|-------------|-----------|
+| Node.js     | v16.20.2  |
+| Angular CLI | v11.2.10  |
+| npm         | v8.19.4   |
 
+---
 
-# FRONT END SETUP (Angular App)
-1: Go to project root folder (Inside Task-Manager-App)
-2: cd Frontend
-3: run command 'npm i'  OR 'npm i --legacy-peer-deps' (only if showing errors)
-4: run command 'ng serve'
-5: open localhost:4200 in the browser
-6: Frontend Angular app is ready to go
+## Getting Started
 
+Clone the repository:
 
+```bash
+git clone <repo-url>
+cd Task-Manager-App
+```
 
+---
 
-# BACK END SERVICE SETUP (Nestjs App)
-1: Go to project root folder (Inside Task-Manager-App)
-2: cd Backend-Service
-3: Run command 'npm i --legacy-peer-deps'  (install dependencies)
-4: Go to email and download the environments zip folder -- unzip it and paste it at the root of the Backend-Service app -- 
-4: Run command 'npm run start:dev'
-5: Now backend service is listening port 9090 and ready to go
+## Frontend Setup — Angular (port 4200)
 
+```bash
+cd Frontend
+npm install
+# If you encounter peer dependency errors, use:
+# npm install --legacy-peer-deps
+ng serve
+```
 
-# USERS CREDENTIALS
-NOTE: There is a file "users-creds.txt" available at the project root folder..
-I have created some  users and assigned already tasks to them
-you can check this file "users-creds.txt" for accessing their credentials...
-In this way you can access the task manager app without creating any user by yourself...
+Open [http://localhost:4200] in your browser.
+
+---
+
+## Backend Setup — NestJS (port 9090)
+
+```bash
+cd Backend-Service
+npm install --legacy-peer-deps
+```
+
+> **⚠️ Environment Configuration Required**
+> Download the environment zip file shared via email, extract it, and place the contents at the **root** of the `Backend-Service` folder before starting the server.
+
+```bash
+npm run start:dev
+```
+
+The backend API will be available at **http://localhost:9090**.
+
+---
+
+## Demo User Credentials
+
+Pre-created accounts with assigned tasks are available so you can explore the app without registering.
+
+Credentials are listed in **`users-creds.txt`** at the project root.
+
+---
+
+## Project Structure
+
+```
+Task-Manager-App/
+├── Frontend/           # Angular application  →  http://localhost:4200
+├── Backend-Service/    # NestJS API server    →  http://localhost:9090
+└── users-creds.txt     # Demo user credentials
+```
+
+---
+
+## Tech Stack
+
+| Layer    | Technology |
+|----------|------------|
+| Frontend | Angular 11 |
+| Backend  | NestJS     |
+| Runtime  | Node.js    |
